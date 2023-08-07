@@ -64,5 +64,6 @@ public class ArrayReverseTest {
         int[] reversed = ArrayReverse.reverseArray(input);
         assertArrayEquals(expected, reversed);
     }
-
 }
+
+.

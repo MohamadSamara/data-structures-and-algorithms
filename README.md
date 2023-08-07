@@ -2,4 +2,4 @@
 
 | Challenge        | link |
 | -----------      | ----------- |
-| CodeChallenge01  | [array-reverse](./Array%20reverse/README.md)    |
+| CodeChallenge01  | [array-reverse](./ArrayReverse/README.md)    |

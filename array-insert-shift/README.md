@@ -33,8 +33,6 @@ public static int[] removeShiftArray(int[] arr) {
 
 ## Solution
 
-How to Use
-
 You can use the insertShiftArray function to insert a value into an array at the middle index. Here's an example of how to use it:
 
 **Example**

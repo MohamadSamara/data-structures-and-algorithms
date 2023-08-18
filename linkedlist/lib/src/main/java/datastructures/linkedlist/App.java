@@ -8,9 +8,9 @@ public class App {
         linkedList.insert(5);
         linkedList.insert(11);
 
-        System.out.println(linkedList.includes(2));
+        System.out.println(linkedList.includes(9));
         System.out.println(linkedList.includes(4));
 
-        System.out.println(linkedList);  // Output: "{ 1 } -> { 2 } -> { 3 } -> NULL"
+        System.out.println(linkedList);
     }
 }

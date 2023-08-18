@@ -2,7 +2,7 @@ package datastructures.linkedlist;
 
 public class LinkedList<T> {
 
-     public Node<T> head;
+    public Node<T> head;
 
     public LinkedList() {
         this.head = null;
@@ -46,4 +46,5 @@ public class LinkedList<T> {
         }
 return x + "NULL" ;
     }
+
 }

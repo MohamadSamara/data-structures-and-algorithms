@@ -80,5 +80,64 @@ public class LinkedListTest {
         String expected = "The LinkedList is Empty";
         assertEquals(expected, linkedList.toString());
     }
+
+//    ============== Test CC06 ===========
+
+    @Test
+    public void testAddNodeToEndOfLinkedList() {
+        LinkedList<Integer> linkedList = new LinkedList<>();
+        linkedList.insert(2);
+        linkedList.insert(1);
+        linkedList.append(3); // Add 3 To the End
+        assertEquals("{1} -> {2} -> {3} -> NULL", linkedList.toString());
+    }
+
+    @Test
+    public void testAppendMultipleNodesToEndOfLinkedList() {
+        LinkedList<Integer> linkedList = new LinkedList<>();
+        linkedList.append(1);
+        linkedList.append(2);
+        linkedList.append(3);
+        assertEquals("{1} -> {2} -> {3} -> NULL", linkedList.toString());
+    }
+
+    @Test
+    public void testInsertBeforeMiddleNode() {
+        LinkedList<Integer> linkedList = new LinkedList<>();
+        linkedList.insert(4);
+        linkedList.insert(3);
+        linkedList.insert(1);
+        linkedList.insertBefore(3, 2);
+        assertEquals("{1} -> {2} -> {3} -> {4} -> NULL", linkedList.toString());
+    }
+
+    @Test
+    public void testInsertBeforeFirstNode() {
+        LinkedList<Integer> linkedList = new LinkedList<>();
+        linkedList.insert(2);
+        linkedList.insert(1);
+        linkedList.insertBefore(1, 0);
+        assertEquals("{0} -> {1} -> {2} -> NULL", linkedList.toString());
+    }
+
+    @Test
+    public void testInsertAfterMiddleNode() {
+        LinkedList<Integer> linkedList = new LinkedList<>();
+        linkedList.insert(4);
+        linkedList.insert(2);
+        linkedList.insert(1);
+        linkedList.insertAfter(2, 3);
+        assertEquals("{1} -> {2} -> {3} -> {4} -> NULL", linkedList.toString());
+    }
+
+    @Test
+    public void testInsertAfterLastNode() {
+        LinkedList<Integer> linkedList = new LinkedList<>();
+        linkedList.insert(2);
+        linkedList.insert(1);
+        linkedList.insertAfter(2, 3);
+        assertEquals("{1} -> {2} -> {3} -> NULL", linkedList.toString());
+    }
+
 }
 

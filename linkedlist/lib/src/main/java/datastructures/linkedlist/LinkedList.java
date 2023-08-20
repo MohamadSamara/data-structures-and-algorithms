@@ -47,4 +47,60 @@ public class LinkedList<T> {
 return x + "NULL" ;
     }
 
+    // ============== CC06 =========================
+
+    public void append(T value) {
+        Node<T> newNode = new Node<>(value);
+        if (isEmpty()) {
+            head = newNode;
+            return;
+        }
+        Node<T> currentNode = head;
+        while (currentNode.next != null) {
+            currentNode = currentNode.next;
+        }
+        currentNode.next = newNode;
+    }
+
+    public void insertBefore(T targetValue, T newValue) {
+        Node<T> newNode = new Node<>(newValue);
+        if (isEmpty()) {
+            System.out.println("Cannot insert before. The LinkedList is Empty");
+            return;
+        }
+        if (head.value == targetValue) {
+            newNode.next = head;
+            head = newNode;
+            return;
+        }
+        Node<T> currentNode = head;
+        while (currentNode.next != null) {
+            if (currentNode.next.value == targetValue) {
+                newNode.next = currentNode.next;
+                currentNode.next = newNode;
+                return;
+            }
+            currentNode = currentNode.next;
+        }
+        System.out.println("No change, method exception");
+    }
+
+    public void insertAfter(T targetValue, T newValue) {
+        Node<T> newNode = new Node<>(newValue);
+        if (isEmpty()) {
+            System.out.println("The LinkedList is Empty Cannot insert after");
+            return;
+        }
+        Node<T> currentNode = head;
+        while (currentNode != null) {
+            if (currentNode.value == targetValue) {
+                newNode.next = currentNode.next;
+                currentNode.next = newNode;
+                return;
+            }
+            currentNode = currentNode.next;
+        }
+        System.out.println("No change, method exception");
+    }
+
 }

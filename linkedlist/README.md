@@ -47,7 +47,6 @@ The `LinkedList` class implements a basic linked list data structure, where node
 
 - Method: `toString()`:
     - Generates a string representation of the linked list.
-    - 
     - Algorithm:
         1. Initialize `result` as an empty string.
         2. Initialize `currentNode` to the `head`.
@@ -57,9 +56,41 @@ The `LinkedList` class implements a basic linked list data structure, where node
         4. Append `"NULL"` to `result`.
         5. Return the final `result`.
 
+- Method: `append(value: T)`
+    - The `append` method adds a new node with the given value to the end of the linked list. This operation is useful when you want to expand the linked list by placing new elements at the end.
+    - Algorithm:
+        1. Create a new node `newNode` with the provided value.
+        2. If the linked list is empty (i.e., `head` is `null`), set `head` to point to `newNode`.
+        3. Otherwise, traverse the linked list starting from the `head` until the last node is reached (i.e., a node with `next` pointing to `null`).
+        4. Set the `next` reference of the last node to point to `newNode`.
+
+- Method: `insertBefore(targetValue: T, newValue: T)`
+    - The `insertBefore` method inserts a new node with the specified `newValue` immediately before the first occurrence of the `targetValue` in the linked list. This operation is useful for adding elements in a specific position.
+      - Algorithm:
+          1. Create a new node `newNode` with the provided `newValue`.
+          2. If the linked list is empty (i.e., `head` is `null`), print an error message indicating that insertion is not possible.
+          3. If the `value` of the `head` matches the `targetValue`, set the `next` reference of `newNode` to the `head`, and update `head` to point to `newNode`.
+          4. Otherwise, traverse the linked list starting from the `head` until the node before the target node is reached (i.e., a node with `next` pointing to the node with `value` matching `targetValue`).
+          5. Set the `next` reference of `newNode` to point to the node referenced by the `next` reference of the current node.
+          6. Set the `next` reference of the current node to point to `newNode`.
+
+- Method: `insertAfter(targetValue: T, newValue: T)`
+    - The `insertAfter` method inserts a new node with the specified `newValue` immediately after the first occurrence of the `targetValue` in the linked list. This operation is useful for adding elements in a specific position.
+      - Algorithm:
+          1. Create a new node `newNode` with the provided `newValue`.
+          2. If the linked list is empty (i.e., `head` is `null`), print an error message indicating that insertion is not possible.
+          3. Traverse the linked list starting from the `head`:
+              - If the `value` of the current node matches the `targetValue`, set the `next` reference of `newNode` to the `next` reference of the current node.
+              - Set the `next` reference of the current node to point to `newNode`.
+              - Return from the method, as the insertion is complete.
+          4. If no node with a value matching the `targetValue` is found during traversal, print an error message indicating that insertion is not possible.
+
+
 ## white Board
 
 ![whiteBoard](./assets/LinkedListWB.png)
+### Update some Feature
+![whiteBoard](./assets/UpdateLinkedListWB.png)
 ![whiteBoard](./assets/LinkedListWB2.png)
 
 ## Approach & Efficiency

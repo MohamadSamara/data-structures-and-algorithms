@@ -103,4 +103,28 @@ return x + "NULL" ;
         System.out.println("No change, method exception");
     }
 
+    public T kthFromEnd(int k) {
+
+        if (isEmpty()){
+            throw new IllegalArgumentException("The linked list is empty");
+        }
+        if (k < 0) {
+            throw new IllegalArgumentException("k must be a positive (k => 0)");
+        }
+        int length = 0;
+        Node<T> current = head;
+        while (current != null) {
+            length++;
+            current = current.next;
+        }
+        if (k >= length) {
+            throw new IllegalArgumentException("k is greater than the length of the linked list");
+        }
+        current = head;
+        for (int i = 1; i < length - k ; i++) {
+            current = current.next;
+        }
+        return current.value;
+    }
+
 }

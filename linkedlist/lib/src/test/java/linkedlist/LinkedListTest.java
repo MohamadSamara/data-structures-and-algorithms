@@ -139,5 +139,24 @@ public class LinkedListTest {
         assertEquals("{1} -> {2} -> {3} -> NULL", linkedList.toString());
     }
 
+    @Test
+    public void testKthFromEnd() {
+        LinkedList<Integer> list = new LinkedList<>();
+        list.append(1);
+        list.append(2);
+        list.append(3);
+        list.append(4);
+
+        LinkedList<Integer> emptyList = new LinkedList<>();
+
+        assertEquals(4, list.kthFromEnd(0));
+        assertEquals(2, list.kthFromEnd(2));
+
+        assertThrows(IllegalArgumentException.class, () -> list.kthFromEnd(10));
+
+        assertThrows(IllegalArgumentException.class, () -> list.kthFromEnd(-1));
+        assertThrows(IllegalArgumentException.class, () -> emptyList.kthFromEnd(0));
+    }
+
 }
 

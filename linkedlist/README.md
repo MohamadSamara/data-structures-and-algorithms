@@ -86,12 +86,30 @@ The `LinkedList` class implements a basic linked list data structure, where node
           4. If no node with a value matching the `targetValue` is found during traversal, print an error message indicating that insertion is not possible.
 
 
+- Method: `kthFromEnd(k: int)`:
+    - Returns the value of the k-th node from the end of the linked list.
+    - Parameters:
+        - `k`: A non-negative integer representing the position from the end (0-based index).
+    - Returns:
+        - The value of the k-th node from the end.
+    - Throws:
+        - `IllegalArgumentException` if `k` is negative or greater than or equal to the length of the linked list.
+        - `IllegalArgumentException` if the linked list is empty.
+    - Algorithm:
+        1. Check for valid inputs: If `k` is negative or greater than the length of the linked list, throw an exception.
+        2. Traverse the linked list to calculate its length.
+        3. Traverse the linked list again to locate the k-th node from the end by moving `(length - k - 1)` steps.
+        4. Return the value of the k-th node.
+
+The provided methods and functionalities within the `LinkedList` class make it a versatile and convenient data structure for managing collections of elements.
+
 ## white Board
 
 ![whiteBoard](./assets/LinkedListWB.png)
 ### Update some Feature
 ![whiteBoard](./assets/UpdateLinkedListWB.png)
 ![whiteBoard](./assets/LinkedListWB2.png)
+![whiteBoard](./assets/element%20from%20last%20in%20linked%20list%20Java.png)
 
 ## Approach & Efficiency
 

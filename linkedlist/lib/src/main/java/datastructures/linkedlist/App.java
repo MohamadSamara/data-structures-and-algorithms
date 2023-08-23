@@ -28,5 +28,13 @@ public class App {
         linkedList.insertAfter(8, 13);
         linkedList.insertAfter(7, 14);
         System.out.println("After Insert After: " + linkedList);
+
+
+        //kthFromEnd
+        try {
+            System.out.println("k-th value from end: " + linkedList.kthFromEnd(1));
+        } catch (IllegalArgumentException e) {
+            System.out.println("Exception: " + e.getMessage());
+        }
     }
 }

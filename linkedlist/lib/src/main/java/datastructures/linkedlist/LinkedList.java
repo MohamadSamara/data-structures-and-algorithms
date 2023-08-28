@@ -1,5 +1,7 @@
 package datastructures.linkedlist;
 
+import java.util.List;
+
 public class LinkedList<T> {
 
     public Node<T> head;
@@ -35,7 +37,7 @@ public class LinkedList<T> {
 
     public String toString() {
 
-        if(isEmpty()){
+        if (isEmpty()) {
             return "The LinkedList is Empty";
         }
         Node<T> currentNode = head;
@@ -44,7 +46,7 @@ public class LinkedList<T> {
             x.append("{").append(currentNode.value).append("} -> ");
             currentNode = currentNode.next;
         }
-return x + "NULL" ;
+        return x + "NULL";
     }
 
     // ============== CC06 =========================
@@ -105,7 +107,7 @@ return x + "NULL" ;
 
     public T kthFromEnd(int k) {
 
-        if (isEmpty()){
+        if (isEmpty()) {
             throw new IllegalArgumentException("The linked list is empty");
         }
         if (k < 0) {
@@ -121,10 +123,41 @@ return x + "NULL" ;
             throw new IllegalArgumentException("k is greater than the length of the linked list");
         }
         current = head;
-        for (int i = 1; i < length - k ; i++) {
+        for (int i = 1; i < length - k; i++) {
             current = current.next;
         }
         return current.value;
     }
+
+        public LinkedList<T> zipLists(LinkedList<T> firstLinkedList, LinkedList<T> secoundLinkedList) {
+
+            if (firstLinkedList.isEmpty()) {
+                System.out.println(secoundLinkedList);
+                return secoundLinkedList;
+            }
+            if (secoundLinkedList.isEmpty()) {
+                System.out.println(firstLinkedList);
+                return firstLinkedList;
+            }
+            LinkedList<T> newLinkedList = new LinkedList<>();
+            Node<T> currentForFirst = firstLinkedList.head;
+            Node<T> currentForSecond = secoundLinkedList.head;
+
+            while(currentForFirst != null || currentForSecond != null) {
+
+                if(currentForFirst != null){
+                    newLinkedList.append(currentForFirst.value);
+                    currentForFirst = currentForFirst.next;
+                }
+
+                if(currentForSecond != null){
+                    newLinkedList.append(currentForSecond.value);
+                    currentForSecond = currentForSecond.next;
+                }
+            }
+
+            System.out.println(newLinkedList);
+            return newLinkedList;
+        }
 
 }

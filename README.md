@@ -1,9 +1,9 @@
 # data-structures-and-algorithms
 
-| Challenge            | link                                                                                              |
-|----------------------|---------------------------------------------------------------------------------------------------|
-| CodeChallenge01      | [array-reverse](./ArrayReverse/README.md)                                                         |
-| CodeChallenge02      | [array insert shift](./array-insert-shift/README.md)                                              |
-| CodeChallenge03      | [array binary search](./array-binary-search/README.md)                                            |
-| CodeChallenge05&&06  | [LinkedList](./linkedlist/README.md)                                                              |
-| CodeChallenge08      | [ZipLinkedList](./linkedlist/[README-linked-list-zip.md](linkedlist%2FREADME-linked-list-zip.md)) |
+| Challenge           | link                                                    |
+|---------------------|---------------------------------------------------------|
+| CodeChallenge01     | [array-reverse](./ArrayReverse/README.md)               |
+| CodeChallenge02     | [array insert shift](./array-insert-shift/README.md)    |
+| CodeChallenge03     | [array binary search](./array-binary-search/README.md)  |
+| CodeChallenge05&&06 | [LinkedList](./linkedlist/README.md)                    |
+| CodeChallenge08     | [ZipLinkedList](./linkedlist/README-linked-list-zip.md) |

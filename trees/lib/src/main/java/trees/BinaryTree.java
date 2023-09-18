@@ -106,4 +106,32 @@ public class BinaryTree<T>{
 //        return listPostOrder;
 //    }
 
+
+
+    private int max = 0;
+    public Integer getMaxValue(){
+        if (root == null) {
+            System.out.println("Tree is Empty!");
+            return null;
+        }
+        else {
+            max = root.value;
+            findMaxHelperFunction(root);
+        }
+        return max;
+    }
+
+    private void findMaxHelperFunction(Node<Integer> node){
+        if(node != null) {
+            if(node.value > max){
+                max = node.value;
+            }
+            findMaxHelperFunction(node.left);
+            findMaxHelperFunction(node.right);
+        }
+    }
+
+
+
 }
+

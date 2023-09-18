@@ -16,12 +16,17 @@ public class Library {
         bst.add(2);
         bst.add(4);
 
+
         System.out.println(bst.traverseInOrder(bst.root));
         System.out.println(bst.traversePreOrder(bst.root));
         System.out.println(bst.traversePostOrder(bst.root));
 
         System.out.println("Contains 4 : " + bst.contains(4));
         System.out.println("Contains 10 : " + bst.contains(10));
+
+        System.out.println("Max : "+bst.getMaxValue()); // Find Max Value
+
+
     }
 
 }

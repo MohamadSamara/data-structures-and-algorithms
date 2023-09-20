@@ -3,9 +3,13 @@
  */
 package trees;
 
+import trees.queue.Queue;
+
+import java.util.ArrayList;
+
 public class Library {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
 
         BinarySearchTree bst = new BinarySearchTree();
@@ -16,17 +20,19 @@ public class Library {
         bst.add(2);
         bst.add(4);
 
+//        System.out.println(bst.traverseInOrder(bst.root));
+//        System.out.println(bst.traversePreOrder(bst.root));
+//        System.out.println(bst.traversePostOrder(bst.root));
+//
+//        System.out.println("Contains 4 : " + bst.contains(4));
+//        System.out.println("Contains 10 : " + bst.contains(10));
+//
+//        System.out.println("Max : "+bst.getMaxValue()); // Find Max Value
 
-        System.out.println(bst.traverseInOrder(bst.root));
-        System.out.println(bst.traversePreOrder(bst.root));
-        System.out.println(bst.traversePostOrder(bst.root));
 
-        System.out.println("Contains 4 : " + bst.contains(4));
-        System.out.println("Contains 10 : " + bst.contains(10));
+        ArrayList<Integer> list = bst.breadthFirst(bst);
 
-        System.out.println("Max : "+bst.getMaxValue()); // Find Max Value
-
-
+        System.out.println(list); // [5, 3, 7, 2, 4]
     }
 
 }

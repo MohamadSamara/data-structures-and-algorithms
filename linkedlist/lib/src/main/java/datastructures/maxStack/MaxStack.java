@@ -12,11 +12,11 @@ public class MaxStack {
         this.maxStack = maxStack;
     }
 
-    public void getMax() {
+    public int getMax() {
 
         if (mainStack.isEmpty()) {
             System.out.println("Empty Stack");
-            return;
+            return -999;
         }
             int max = maxStack.isEmpty() ? Integer.MIN_VALUE : maxStack.peek();
             int newMax;
@@ -29,8 +29,7 @@ public class MaxStack {
                 }
                 mainStack.pop();
             }
-            System.out.println(maxStack.peek());
-
+            return maxStack.peek();
         }
 
 

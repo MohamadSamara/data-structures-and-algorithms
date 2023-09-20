@@ -6,6 +6,7 @@ public class App {
 
     public static void main(String[] args) {
         Stack<Integer> mainStack = new Stack<>();
+        mainStack.push(9);
         mainStack.push(6);
         mainStack.push(1);
         mainStack.push(2);
@@ -18,6 +19,6 @@ public class App {
         Stack<Integer> maxstack = new Stack<>();
 
         MaxStack maxStack = new MaxStack(mainStack , maxstack);
-        maxStack.getMax();
+        System.out.println(maxStack.getMax());
     }
 }

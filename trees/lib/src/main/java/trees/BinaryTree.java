@@ -1,5 +1,7 @@
 package trees;
 
+import trees.queue.Queue;
+
 import java.util.ArrayList;
 
 public class BinaryTree<T>{
@@ -131,6 +133,27 @@ public class BinaryTree<T>{
         }
     }
 
+
+
+    public ArrayList<Integer> breadthFirst(BinaryTree<T> tree) throws Exception {
+
+        ArrayList<Integer> result = new ArrayList<>();
+        Queue<Node<Integer>> nodes = new Queue<>();
+        if(tree.root != null) {
+            nodes.enqueue(tree.root);
+        }
+        while(!nodes.isEmpty()) {
+            Node<Integer> temp = nodes.dequeue();
+            result.add(temp.value);
+            if(temp.left != null) {
+                nodes.enqueue(temp.left);
+            }
+            if(temp.right != null) {
+                nodes.enqueue(temp.right);
+            }
+        }
+        return result;
+    }
 
 
 }

@@ -1,10 +1,12 @@
 package trees.queue;
 
+import trees.Node;
+
 public class Queue<T> {
     private QueueNode<T> front;
     private QueueNode<T> back;
 
-    public void enqueue(T value) {
+    public void enqueue(Node<Integer> value) {
         QueueNode<T> node = new QueueNode<>(value);
         if (isEmpty()) {
             front = node;

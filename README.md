@@ -12,4 +12,5 @@
 | CodeChallenge15     | [Tree](./trees/README.md)                                       |
 | CodeChallenge16     | [Max Tree](./trees/MaxTree.md)                                  |
 | CodeChallenge17     | [Breadth First](./trees/BreadthFirst.md)                        |
-| CodeChallenge26     | [Insertion Sort](./Insertion-Sort/README.md)                    |
+| CodeChallenge26     | [Insertion Sort](./sorting/app/src/main/java/sorting/app/insertion/README.md)                    |
+| CodeChallenge27     | [Merge Sort](./sorting/app/src/main/java/sorting/app/merge/README.md)                        |

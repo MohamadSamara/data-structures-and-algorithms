@@ -13,4 +13,4 @@ create method called mergeSort that returns the sorted arrays
 ![image](../../../../../../../../sorting/assets/Challenge27.png)
 
 ## Solution
-### Go [here](./sorting/app/src/main/java/sorting/app/merge/App.java) and check my code
+### Go [here](https://github.com/MohamadSamara/data-structures-and-algorithms/blob/main/sorting/app/src/main/java/sorting/app/merge/App.java) and check my code

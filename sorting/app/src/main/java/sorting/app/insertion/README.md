@@ -14,4 +14,4 @@
 #### The approach I go is increase my skill to step over the algorithm step by step and recorde the result and make table contain the variables and its values at iterating moment
 
 ## Solution
-### Go [here](https://github.com/MohamadSamara/data-structures-and-algorithms/blob/main/Insertion-Sort/app/src/main/java/insertion/sort/app/App.java) and check my code .
+### Go [here](https://github.com/MohamadSamara/data-structures-and-algorithms/blob/main/sorting/app/src/main/java/sorting/app/insertion/App.java) and check my code .

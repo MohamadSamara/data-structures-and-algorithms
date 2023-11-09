@@ -16,4 +16,5 @@
 | CodeChallenge27     | [Merge Sort](./sorting/app/src/main/java/sorting/app/merge/README.md)                      |
 | CodeChallenge28     | [Domain Objects Sort](./sorting/app/src/main/java/sorting/app/sortDomainObjects/README.md) |
 | CodeChallenge30     | [Hash Table](./hashTable/app/src/main/java/hashtable/app/README.md)                        |
-| CodeChallenge31     | [Repeated Word](./hashTable/app/src/main/java/hashtable/app/RepeatedWordReadme.md)                     |
+| CodeChallenge31     | [Repeated Word](./hashTable/app/src/main/java/hashtable/app/RepeatedWordReadme.md)         |
+| CodeChallenge32     | [Tree Intersection](./hashTable/app/src/main/java/hashtable/app/TreeIntersection/TreeIntersection.md)    |

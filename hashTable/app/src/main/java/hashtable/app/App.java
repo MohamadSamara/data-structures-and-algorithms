@@ -1,9 +1,5 @@
 package hashtable.app;
 
-import java.util.List;
-
-import static hashtable.app.LeftJoin.leftJoin;
-
 public class App {
     public static void main(String[] args) {
 
@@ -64,26 +60,33 @@ public class App {
 
 // ************** Left Join ************
 
-        HashMap<String, String> synonymsHashmap = new HashMap<>(5);
-        synonymsHashmap.set("diligent", "employed");
-        synonymsHashmap.set("fond", "enamored");
-        synonymsHashmap.set("guide", "usher");
-        synonymsHashmap.set("outfit", "garb");
-        synonymsHashmap.set("wrath", "anger");
+//        HashMap<String, String> synonymsHashmap = new HashMap<>(5);
+//        synonymsHashmap.set("diligent", "employed");
+//        synonymsHashmap.set("fond", "enamored");
+//        synonymsHashmap.set("guide", "usher");
+//        synonymsHashmap.set("outfit", "garb");
+//        synonymsHashmap.set("wrath", "anger");
+//
+//        HashMap<String, String> antonymsHashmap = new HashMap<>(5);
+//        antonymsHashmap.set("diligent", "idle");
+//        antonymsHashmap.set("fond", "averse");
+//        antonymsHashmap.set("guide", "follow");
+//        antonymsHashmap.set("flow", "jam");
+//        antonymsHashmap.set("wrath", "delight");
+//
+//        List<List<String>> result = leftJoin(synonymsHashmap, antonymsHashmap);
+//        System.out.println(result);
 
-        HashMap<String, String> antonymsHashmap = new HashMap<>(5);
-        antonymsHashmap.set("diligent", "idle");
-        antonymsHashmap.set("fond", "averse");
-        antonymsHashmap.set("guide", "follow");
-        antonymsHashmap.set("flow", "jam");
-        antonymsHashmap.set("wrath", "delight");
+//      ************* For InterView *********
 
-        List<List<String>> result = leftJoin(synonymsHashmap, antonymsHashmap);
-        System.out.println(result);
+        HashMap<Character, Boolean> charMap = new HashMap<>(5);
+        String input1 = "The quick brown fox jumps over the lazy dog";
+        String input2 = "I love cats";
+        String input3 = " ";
 
-
-
-
+        System.out.println("Input 1: " + charMap.isUnique(input1));
+        System.out.println("Input 2: " + charMap.isUnique(input2));
+        System.out.println("Input 3: " + charMap.isUnique(input3));
 
 
 

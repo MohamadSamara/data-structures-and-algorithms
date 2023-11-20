@@ -20,12 +20,12 @@ public class App {
         stringGraph.addEdge(vertex,vertex2);
         stringGraph.addEdge(vertex,vertex3,5);
 
-        System.out.println(stringGraph.getNeighbors(vertex));
-        System.out.println("**************************************");
-        System.out.println(stringGraph.isConnected(vertex2,vertex3));
-
-
-        System.out.println("Test 2 For Integer Graph");
+//        System.out.println(stringGraph.getNeighbors(vertex));
+//        System.out.println("**************************************");
+//        System.out.println(stringGraph.isConnected(vertex2,vertex3));
+//
+//
+//        System.out.println("Test 2 For Integer Graph");
 
 // Integer Graph
         Graph<Integer> integerGraph = new Graph<>();
@@ -37,11 +37,30 @@ public class App {
         integerGraph.addEdge(v1, v2, 4);
         integerGraph.addEdge(v2, v3, 5);
 
-        System.out.println(integerGraph.isContainVertex(v1));
-        System.out.println("**************************************");
-        System.out.println(integerGraph.isConnected(v1, v2));
-        System.out.println("**************************************");
-        Collection<Vertex<Integer>> vertices = integerGraph.getVertices();
-        System.out.println(vertices);
+//        System.out.println(integerGraph.isContainVertex(v1));
+//        System.out.println("**************************************");
+//        System.out.println(integerGraph.isConnected(v1, v2));
+//        System.out.println("**************************************");
+//        Collection<Vertex<Integer>> vertices = integerGraph.getVertices();
+//        System.out.println(vertices);
+
+
+        System.out.println(stringGraph.breadthFirst(vertex));
+
+        System.out.println("*********** Test 2 *********88");
+
+        Graph<String> graph = new Graph<>();
+        Vertex<String> root = graph.addVertex("A");
+        graph.addVertex("B");
+        graph.addVertex("C");
+        graph.addVertex("D");
+        graph.addEdge(root, graph.addVertex("E"));
+        graph.addEdge(root, graph.addVertex("F"));
+        graph.addEdge(graph.addVertex("G"), root);
+
+        System.out.println(graph.breadthFirst(root));
+
+
+
     }
 }

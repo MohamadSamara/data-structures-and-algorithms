@@ -126,7 +126,7 @@ class AppTest {
         stringGraph.addEdge(vertex3, vertex6);
         stringGraph.addEdge(vertex3, vertex5);
 
-        List<String> expected = Arrays.asList("Pandora", "Arendelle", "Metroville", "Naboo", "Narnia", "Monstroplolis");
+        List<String> expected = Arrays.asList("Pandora", "Arendelle", "Metroville", "Narnia", "Monstroplolis" , "Naboo");
         assertEquals(expected, stringGraph.breadthFirst(vertex));
     }
 

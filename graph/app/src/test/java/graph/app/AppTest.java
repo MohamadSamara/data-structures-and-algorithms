@@ -126,7 +126,7 @@ class AppTest {
         stringGraph.addEdge(vertex3, vertex6);
         stringGraph.addEdge(vertex3, vertex5);
 
-        List<String> expected = Arrays.asList("Pandora", "Arendelle", "Metroville", "Naboo", "Narnia", "Monstroplolis");
+        List<String> expected = Arrays.asList("Pandora", "Arendelle", "Metroville", "Monstroplolis" , "Narnia", "Naboo");
         assertEquals(expected, stringGraph.breadthFirst(vertex));
     }
 
@@ -185,5 +185,44 @@ class AppTest {
         assertEquals(expected, stringGraph.breadthFirst(vertex));
     }
 
+// **************** For CC 37 ****************
 
+    @Test
+    void testGraphBusinessTrip() {
+        Graph<String> stringGraph = new Graph<>();
+        Vertex<String> node = new Vertex<>("Pandora");
+        Vertex<String> node2 = new Vertex<>("Arendelle");
+        Vertex<String> node3 = new Vertex<>("Metroville");
+        Vertex<String> node4 = new Vertex<>("Monstroplolis");
+        Vertex<String> node5 = new Vertex<>("Narnia");
+        Vertex<String> node6 = new Vertex<>("Naboo");
+        stringGraph.addVertex("Pandora");
+        stringGraph.addVertex("Arendelle");
+        stringGraph.addVertex("Metroville");
+        stringGraph.addVertex("Monstroplolis");
+        stringGraph.addVertex("Narnia");
+        stringGraph.addVertex("Naboo");
+
+        stringGraph.addEdge(node, node2, 50);
+        stringGraph.addEdge(node2, node3, 20);
+        stringGraph.addEdge(node4, node3);
+        stringGraph.addEdge(node4, node6);
+        stringGraph.addEdge(node3, node6);
+        stringGraph.addEdge(node3, node5);
+
+        // Test 1
+         assertEquals(50, stringGraph.businessTrip(stringGraph, new String[]{"Pandora", "Arendelle"}));
+
+        // Test 2
+         assertEquals(70, stringGraph.businessTrip(stringGraph, new String[]{"Pandora", "Arendelle", "Metroville"}));
+
+         // Test 3
+        assertNull(stringGraph.businessTrip(stringGraph, new String[]{"Arendelle", "Monstroplolis", "Naboo"}));
+
+        // Test 4
+         assertEquals(0, stringGraph.businessTrip(stringGraph, new String[]{"Narnia", "Metroville", "Monstroplolis", "Naboo"}));
+
+        // Test 5
+        assertNull(stringGraph.businessTrip(stringGraph, new String[]{}));
+    }
 }

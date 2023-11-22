@@ -112,5 +112,31 @@ public class Graph<V> {
     }
 
 
+    public Integer businessTrip(Graph<String> graph, String[] cityNames) {
+        if (cityNames.length < 2) {
+            return null;
+        }
+
+        int totalCost = 0;
+
+        for (int i = 0; i < cityNames.length - 1; i++) {
+            String currentCity = cityNames[i];
+            String nextCity = cityNames[i + 1];
+
+            boolean isConnected = false;
+            for (Edges<String> edge : graph.getNeighbors(graph.addVertex(currentCity))) {
+                if (edge.getTo().getValue().equals(nextCity)) {
+                    totalCost += edge.getWeight();
+                    isConnected = true;
+                    break;
+                }
+            }
+            if (!isConnected) {
+                return null;
+            }
+        }
+        return totalCost;
+    }
+
 
 }

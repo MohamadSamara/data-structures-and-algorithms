@@ -79,14 +79,6 @@ public class Graph<V> {
         return false;
     }
 
-    @Override
-    public String toString() {
-        return "Graph{" +
-                "size=" + size +
-                ", vertexes=" + vertex +
-                '}';
-    }
-
     // ******** For CC 36 *********
     public List<V> breadthFirst(Vertex<V> root) {
         List<V> out = new ArrayList<>();
@@ -138,5 +130,53 @@ public class Graph<V> {
         return totalCost;
     }
 
+
+
+//     ****************** For CC 38 ******************
+
+//    public List<Vertex<V>> depthFirst(Vertex<V> node) {
+//        return depthFirst(vertex.get(node.getValue()), new HashSet<>(), new ArrayList<>());
+//    }
+//
+//    private List<Vertex<V>> depthFirst(Vertex<V> node, Set<Vertex<V>> visited, List<Vertex<V>> out) {
+//        if (node == null)
+//            return out;
+//        visited.add(vertex.get(node.getValue()));
+//        out.add(node);
+//        for (Edges<V> edges : node.getEdges()) {
+//            if (!visited.contains(vertex.get(edges.getTo().getValue())))
+//                return depthFirst(vertex.get(edges.getTo().getValue()), visited, out);
+//        }
+//        return out;
+//    }
+
+    public List<Vertex<V>> depthFirst(Vertex<V> node) {
+        return depthFirstHelper(vertex.get(node.getValue()), new HashSet<>(), new ArrayList<>());
+    }
+
+    private List<Vertex<V>> depthFirstHelper(Vertex<V> node, Set<Vertex<V>> visited, List<Vertex<V>> out) {
+        if (node == null || visited.contains(node)) {
+            return out;
+        }
+
+        visited.add(node);
+        out.add(node);
+
+        for (Edges<V> edges : node.getEdges()) {
+            if (!visited.contains(edges.getTo())) {
+                depthFirstHelper(edges.getTo(), visited, out);
+            }
+        }
+
+        return out;
+    }
+
+    @Override
+    public String toString() {
+        return "Graph{" +
+                "size=" + size +
+                ", vertexes=" + vertex +
+                '}';
+    }
 
 }

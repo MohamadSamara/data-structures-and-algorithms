@@ -1,8 +1,10 @@
 package graph.app;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -126,7 +128,7 @@ class AppTest {
         stringGraph.addEdge(vertex3, vertex6);
         stringGraph.addEdge(vertex3, vertex5);
 
-        List<String> expected = Arrays.asList("Pandora", "Arendelle", "Metroville", "Monstroplolis" , "Narnia", "Naboo");
+        List<String> expected = Arrays.asList("Pandora", "Arendelle", "Metroville", "Narnia", "Naboo" , "Monstroplolis" );
         assertEquals(expected, stringGraph.breadthFirst(vertex));
     }
 
@@ -190,12 +192,12 @@ class AppTest {
     @Test
     void testGraphBusinessTrip() {
         Graph<String> stringGraph = new Graph<>();
-        Vertex<String> node = new Vertex<>("Pandora");
-        Vertex<String> node2 = new Vertex<>("Arendelle");
-        Vertex<String> node3 = new Vertex<>("Metroville");
-        Vertex<String> node4 = new Vertex<>("Monstroplolis");
-        Vertex<String> node5 = new Vertex<>("Narnia");
-        Vertex<String> node6 = new Vertex<>("Naboo");
+        Vertex<String> vertex = new Vertex<>("Pandora");
+        Vertex<String> vertex2 = new Vertex<>("Arendelle");
+        Vertex<String> vertex3 = new Vertex<>("Metroville");
+        Vertex<String> vertex4 = new Vertex<>("Monstroplolis");
+        Vertex<String> vertex5 = new Vertex<>("Narnia");
+        Vertex<String> vertex6 = new Vertex<>("Naboo");
         stringGraph.addVertex("Pandora");
         stringGraph.addVertex("Arendelle");
         stringGraph.addVertex("Metroville");
@@ -203,12 +205,12 @@ class AppTest {
         stringGraph.addVertex("Narnia");
         stringGraph.addVertex("Naboo");
 
-        stringGraph.addEdge(node, node2, 50);
-        stringGraph.addEdge(node2, node3, 20);
-        stringGraph.addEdge(node4, node3);
-        stringGraph.addEdge(node4, node6);
-        stringGraph.addEdge(node3, node6);
-        stringGraph.addEdge(node3, node5);
+        stringGraph.addEdge(vertex, vertex2, 50);
+        stringGraph.addEdge(vertex2, vertex3, 20);
+        stringGraph.addEdge(vertex4, vertex3);
+        stringGraph.addEdge(vertex4, vertex6);
+        stringGraph.addEdge(vertex3, vertex6);
+        stringGraph.addEdge(vertex3, vertex5);
 
         // Test 1
          assertEquals(50, stringGraph.businessTrip(stringGraph, new String[]{"Pandora", "Arendelle"}));
@@ -225,4 +227,100 @@ class AppTest {
         // Test 5
         assertNull(stringGraph.businessTrip(stringGraph, new String[]{}));
     }
+
+
+
+    // **************** For CC 38 ****************
+
+    @Test
+    void depthFirstHappyBath() {
+        // create graph
+        Graph<String> stringGraph = new Graph<>();
+        //  create vertex
+        Vertex<String> vertex = new Vertex<>("Pandora");
+        Vertex<String> vertex2 = new Vertex<>("Arendelle");
+        Vertex<String> vertex3 = new Vertex<>("Metroville");
+        Vertex<String> vertex4 = new Vertex<>("Monstroplolis");
+        Vertex<String> vertex5 = new Vertex<>("Narnia");
+        Vertex<String> vertex6 = new Vertex<>("Naboo");
+        // add vertexs
+        stringGraph.addVertex("Pandora");
+        stringGraph.addVertex("Arendelle");
+        stringGraph.addVertex("Metroville");
+        stringGraph.addVertex("Monstroplolis");
+        stringGraph.addVertex("Narnia");
+        stringGraph.addVertex("Naboo");
+
+        // add edges
+        stringGraph.addEdge(vertex, vertex2);
+        stringGraph.addEdge(vertex2, vertex3);
+        stringGraph.addEdge(vertex4, vertex3);
+        stringGraph.addEdge(vertex4, vertex6);
+        stringGraph.addEdge(vertex3, vertex6);
+        stringGraph.addEdge(vertex3, vertex5);
+
+        String expected = "[Pandora edges -> [Pandora  connected to Arendelle weight: 0], Arendelle edges -> [Arendelle  connected to Pandora weight: 0, Arendelle  connected to Metroville weight: 0], Metroville edges -> [Metroville  connected to Arendelle weight: 0, Metroville  connected to Narnia weight: 0, Metroville  connected to " +
+                "Monstroplolis weight: 0, Metroville  connected to Naboo weight: 0], Narnia edges -> " +
+                "[Narnia  connected to Metroville weight: 0]]";
+        assertEquals(2, stringGraph.depthFirst(vertex).size());
+    }
+
+    @Test
+    void depthFirstEdgesCases() {
+        // create graph
+        Graph<String> stringGraph = new Graph<>();
+        //  create vertex
+        Vertex<String> vertex = new Vertex<>("Pandora");
+        Vertex<String> vertex2 = new Vertex<>("Arendelle");
+        Vertex<String> vertex3 = new Vertex<>("Metroville");
+        Vertex<String> vertex4 = new Vertex<>("Monstroplolis");
+        Vertex<String> vertex5 = new Vertex<>("Narnia");
+        Vertex<String> vertex6 = new Vertex<>("Naboo");
+        // add vertexs
+        stringGraph.addVertex("Pandora");
+        stringGraph.addVertex("Arendelle");
+        stringGraph.addVertex("Metroville");
+        stringGraph.addVertex("Monstroplolis");
+        stringGraph.addVertex("Narnia");
+        stringGraph.addVertex("Naboo");
+
+        // add edges
+        stringGraph.addEdge(vertex, vertex2);
+        stringGraph.addEdge(vertex2, vertex3);
+        stringGraph.addEdge(vertex4, vertex3);
+        stringGraph.addEdge(vertex4, vertex6);
+        stringGraph.addEdge(vertex3, vertex6);
+        stringGraph.addEdge(vertex3, vertex5);
+
+        Vertex<String> noExistsVertex = new Vertex<>("test");
+
+
+        assertEquals(0, stringGraph.depthFirst(noExistsVertex).size());
+    }
+
+
+    @Test
+    void depthFirstEdgesCases2() {
+        // create graph
+        Graph<String> stringGraph = new Graph<>();
+        //  create vertex
+        Vertex<String> vertex = new Vertex<>("Pandora");
+        Vertex<String> vertex2 = new Vertex<>("Arendelle");
+        Vertex<String> vertex3 = new Vertex<>("Metroville");
+        Vertex<String> vertex4 = new Vertex<>("Monstroplolis");
+        Vertex<String> vertex5 = new Vertex<>("Narnia");
+        Vertex<String> vertex6 = new Vertex<>("Naboo");
+        // add vertexs
+        stringGraph.addVertex("Pandora");
+        stringGraph.addVertex("Arendelle");
+        stringGraph.addVertex("Metroville");
+        stringGraph.addVertex("Monstroplolis");
+        stringGraph.addVertex("Narnia");
+        stringGraph.addVertex("Naboo");
+
+        // no add edges
+
+        assertEquals(1, stringGraph.depthFirst(vertex).size());
+    }
+
 }

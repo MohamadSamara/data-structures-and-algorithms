@@ -1,36 +1,36 @@
 package graph.app;
 
-import java.util.Collection;
+import java.util.List;
 
 public class App {
     public static void main(String[] args) {
 
 
 
-        Graph<String> stringGraph = new Graph<>();
-        Vertex<String> node = new Vertex<>("Pandora");
-        Vertex<String> node2 = new Vertex<>("Arendelle");
-        Vertex<String> node3 = new Vertex<>("Metroville");
-        Vertex<String> node4 = new Vertex<>("Monstroplolis");
-        Vertex<String> node5 = new Vertex<>("Narnia");
-        Vertex<String> node6 = new Vertex<>("Naboo");
-        stringGraph.addVertex("Pandora");
-        stringGraph.addVertex("Arendelle");
-        stringGraph.addVertex("Metroville");
-        stringGraph.addVertex("Monstroplolis");
-        stringGraph.addVertex("Narnia");
-        stringGraph.addVertex("Naboo");
-
-
-        stringGraph.addEdge(node, node2,50);
-        stringGraph.addEdge(node2, node3,20);
-        stringGraph.addEdge(node4, node3);
-        stringGraph.addEdge(node4, node6);
-        stringGraph.addEdge(node3, node6);
-        stringGraph.addEdge(node3, node5);
-
-        System.out.println(stringGraph.businessTrip(stringGraph,new String[]{"Pandora","Naboo"}));
-        System.out.println(stringGraph.businessTrip(stringGraph, new String[]{"Pandora", "Arendelle", "Metroville"}));
+//        Graph<String> stringGraph = new Graph<>();
+//        Vertex<String> node = new Vertex<>("Pandora");
+//        Vertex<String> node2 = new Vertex<>("Arendelle");
+//        Vertex<String> node3 = new Vertex<>("Metroville");
+//        Vertex<String> node4 = new Vertex<>("Monstroplolis");
+//        Vertex<String> node5 = new Vertex<>("Narnia");
+//        Vertex<String> node6 = new Vertex<>("Naboo");
+//        stringGraph.addVertex("Pandora");
+//        stringGraph.addVertex("Arendelle");
+//        stringGraph.addVertex("Metroville");
+//        stringGraph.addVertex("Monstroplolis");
+//        stringGraph.addVertex("Narnia");
+//        stringGraph.addVertex("Naboo");
+//
+//
+//        stringGraph.addEdge(node, node2,50);
+//        stringGraph.addEdge(node2, node3,20);
+//        stringGraph.addEdge(node4, node3);
+//        stringGraph.addEdge(node4, node6);
+//        stringGraph.addEdge(node3, node6);
+//        stringGraph.addEdge(node3, node5);
+//
+//        System.out.println(stringGraph.businessTrip(stringGraph,new String[]{"Pandora","Naboo"}));
+//        System.out.println(stringGraph.businessTrip(stringGraph, new String[]{"Pandora", "Arendelle", "Metroville"}));
 
 
 // String Graph
@@ -77,17 +77,36 @@ public class App {
 //
 //        System.out.println("*********** Test 2 *********88");
 //
-//        Graph<String> graph = new Graph<>();
-//        Vertex<String> root = graph.addVertex("A");
-//        graph.addVertex("B");
-//        graph.addVertex("C");
-//        graph.addVertex("D");
-//        graph.addEdge(root, graph.addVertex("E"));
-//        graph.addEdge(root, graph.addVertex("F"));
-//        graph.addEdge(graph.addVertex("G"), root);
-//
-//        System.out.println(graph.breadthFirst(root));
 
+
+        // Test CC 38
+//
+//        Graph<String> graph = new Graph<>();
+//        Vertex<String> A = graph.addVertex("A");
+//        Vertex<String> B = graph.addVertex("B");
+//        Vertex<String> C = graph.addVertex("C");
+//        Vertex<String> D = graph.addVertex("D");
+//        Vertex<String> E = graph.addVertex("E");
+//        Vertex<String> F = graph.addVertex("F");
+//        Vertex<String> G = graph.addVertex("G");
+//        Vertex<String> H = graph.addVertex("H");
+//
+//        graph.addEdge(A,B);
+//        graph.addEdge(A,D);
+//
+//        graph.addEdge(B,D);
+//        graph.addEdge(B,C);
+//
+//        graph.addEdge(C,G);
+//
+//        graph.addEdge(D,E);
+//        graph.addEdge(D,H);
+//        graph.addEdge(D,F);
+//
+//        graph.addEdge(F,H);
+//        graph.addEdge(F,H);
+//
+//        System.out.println(graph.depthFirst(A));
 
 
     }

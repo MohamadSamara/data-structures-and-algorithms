@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f7b9c521-8631-449c-9662-ead3550e8757" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/graph/app/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/graph/app/App.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +26,12 @@
         <task path="$PROJECT_DIR$">
           <activation />
         </task>
-        <projects_view />
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
   </component>
@@ -55,7 +63,7 @@
       <recent name="C:\data-structures-and-algorithms\graph\assets" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.AppTest">
+  <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="graph.app.App" />
       <module name="graph.app.main" />
@@ -93,7 +101,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="AppTest.assertAllVertexes" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="AppTest.depthFirstTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -106,7 +114,7 @@
           <list>
             <option value=":app:test" />
             <option value="--tests" />
-            <option value="&quot;graph.app.AppTest.assertAllVertexes&quot;" />
+            <option value="&quot;graph.app.AppTest.depthFirstTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -117,7 +125,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="AppTest.testBusinessTrip" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="AppTest.depthFirstTestGraph3" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -130,7 +138,7 @@
           <list>
             <option value=":app:test" />
             <option value="--tests" />
-            <option value="&quot;graph.app.AppTest.testBusinessTrip&quot;" />
+            <option value="&quot;graph.app.AppTest.depthFirstTestGraph3&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -168,9 +176,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.AppTest" />
-        <item itemvalue="Gradle.AppTest.assertAllVertexes" />
-        <item itemvalue="Gradle.AppTest.testBusinessTrip" />
         <item itemvalue="Gradle.AppTest.testExpectedFailure" />
+        <item itemvalue="Gradle.AppTest.depthFirstTestGraph3" />
+        <item itemvalue="Gradle.AppTest.depthFirstTest" />
         <item itemvalue="Application.App" />
       </list>
     </recent_temporary>

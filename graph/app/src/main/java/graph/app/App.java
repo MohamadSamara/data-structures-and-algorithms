@@ -1,10 +1,12 @@
 package graph.app;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class App {
     public static void main(String[] args) {
-
 
 
 //        Graph<String> stringGraph = new Graph<>();
@@ -109,5 +111,46 @@ public class App {
 //        System.out.println(graph.depthFirst(A));
 
 
+
+        // Test For CC 39
+        String[] nodes = {"a", "b", "c", "d", "e"};
+        boolean[][] adjacencyMatrix = {
+                {false, true, false, false, true},
+                {true, false, true, true, false},
+                {false, true, false, true, false},
+                {false, true, true, false, true},
+                {true, false, false, true, false}
+        };
+
+        Map<String, List<String>> adjacencyList = AdjacencyList.convertAdjacencyMatrixToAdjacencyList(nodes, adjacencyMatrix);
+        AdjacencyList.printAdjacencyList(adjacencyList);
+    }
+
+    // For CC39 ( Interview )
+    static class AdjacencyList {
+
+        public static Map<String, List<String>> convertAdjacencyMatrixToAdjacencyList(String[] nodes, boolean[][] adjacencyMatrix) {
+            Map<String, List<String>> adjacencyList = new HashMap<>();
+            for (int i = 0; i < nodes.length; i++) {
+                List<String> neighbors = new ArrayList<>();
+                for (int j = 0; j < nodes.length; j++) {
+                    if (adjacencyMatrix[i][j]) {
+                        neighbors.add(nodes[j]);
+                    }
+                }
+                adjacencyList.put(nodes[i], neighbors);
+            }
+            return adjacencyList;
+        }
+        public static void printAdjacencyList(Map<String, List<String>> adjacencyList) {
+            for (String node : adjacencyList.keySet()) {
+                System.out.print(node + "|->");
+                for (String neighbor : adjacencyList.get(node)) {
+                    System.out.print(neighbor + " ");
+                }
+                System.out.println();
+            }
+        }
     }
 }
+

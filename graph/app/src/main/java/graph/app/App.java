@@ -111,20 +111,64 @@ public class App {
 //        System.out.println(graph.depthFirst(A));
 
 
+//        // Test For CC 39
+//        String[] nodes = {"a", "b", "c", "d", "e"};
+//        boolean[][] adjacencyMatrix = {
+//                {false, true, false, false, true},
+//                {true, false, true, true, false},
+//                {false, true, false, true, false},
+//                {false, true, true, false, true},
+//                {true, false, false, true, false}
+//        };
+//
+//        Map<String, List<String>> adjacencyList = AdjacencyList.convertAdjacencyMatrixToAdjacencyList(nodes, adjacencyMatrix);
+//        AdjacencyList.printAdjacencyList(adjacencyList);
 
-        // Test For CC 39
-        String[] nodes = {"a", "b", "c", "d", "e"};
-        boolean[][] adjacencyMatrix = {
-                {false, true, false, false, true},
-                {true, false, true, true, false},
-                {false, true, false, true, false},
-                {false, true, true, false, true},
-                {true, false, false, true, false}
-        };
 
-        Map<String, List<String>> adjacencyList = AdjacencyList.convertAdjacencyMatrixToAdjacencyList(nodes, adjacencyMatrix);
-        AdjacencyList.printAdjacencyList(adjacencyList);
+        // Test For CC 41
+
+        System.out.println(areAnagram("Eleven plus two", "Twelve plus one")); // True
+        System.out.println(areAnagram("Clint Eastwood", "Old West Action")); // True
+        System.out.println(areAnagram("Software", "Swear often")); // False
+        System.out.println(areAnagram("Astronomers", "Moon starers")); // True
+
+
     }
+
+    // For CC41 ( Interview )
+    public static boolean areAnagram(String firstString, String secondString) {
+
+        firstString = firstString.replaceAll("\\s", "").toLowerCase();
+        secondString = secondString.replaceAll("\\s", "").toLowerCase();
+
+        if (firstString.length() != secondString.length()) {
+            return false;
+        }
+        HashMap<Character, Integer> hashMap = new HashMap<>();
+        for (int i = 0; i < firstString.length(); i++) {
+            if (hashMap.containsKey(firstString.charAt(i))) {
+                hashMap.put(firstString.charAt(i), hashMap.get(firstString.charAt(i)) + 1);
+            }
+            else {
+                hashMap.put(firstString.charAt(i), 1);
+            }
+        }
+        for (int i = 0; i < secondString.length(); i++) {
+            if (hashMap.containsKey(secondString.charAt(i))) {
+                hashMap.put(secondString.charAt(i), hashMap.get(secondString.charAt(i)) - 1);
+            }
+            else {
+                return false;
+            }
+        }
+        for (Character key : hashMap.keySet()) {
+            if (hashMap.get(key) != 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 
     // For CC39 ( Interview )
     static class AdjacencyList {
@@ -142,6 +186,7 @@ public class App {
             }
             return adjacencyList;
         }
+
         public static void printAdjacencyList(Map<String, List<String>> adjacencyList) {
             for (String node : adjacencyList.keySet()) {
                 System.out.print(node + "|->");
@@ -152,5 +197,6 @@ public class App {
             }
         }
     }
+
 }
 
